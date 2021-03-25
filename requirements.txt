@@ -1,0 +1,10 @@
+discord
+wolframalpha
+numpy
+Pillow
+matplotlib
+requests
+pandas
+gspread
+oauth2client
+webcolors

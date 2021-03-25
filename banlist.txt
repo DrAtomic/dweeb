@@ -1,0 +1,105 @@
+Sol Ring
+Swords to Plowshares
+Arcane Signet
+Cultivate
+Counterspell
+Cyclonic Rift
+Izzet Signet
+Dimir Signet
+Orzhov Signet
+Boros Signet
+Rakdos Signet
+Kodama's Reach
+Beast Within
+Smothering Tithe
+Path to Exile
+Rampant Growth
+Farseek
+Rhystic Study
+Azorius Signet
+Demonic Tutor
+Dovin's Veto
+Talisman of Creativity
+Lightning Greaves
+Eternal Witness
+Assassin's Trophy
+Chaos Warp
+Sakura-Tribe Elder
+Brainstorm
+Anguished Unmaking
+Boros Charm
+Heroic Intervention
+Llanowar Elves
+Blasphemous Act
+Birds of Paradise
+Eladamri's Call
+Swan Song
+Ruinous Ultimatum
+Talisman of Dominance
+Talisman of Hierarchy
+Swiftfoot Boots
+Mystical Tutor
+Vampiric Tutor
+Rhythm of the Wild
+Enlightened Tutor
+Reclamation Sage
+Simic Signet
+Dockside Extortionist
+Deathrite Shaman
+Talisman of Conviction
+Growth Spiral
+Windfall
+Despark
+Negate
+Fierce Guardianship
+Generous Gift
+Terminate
+Eerie Ultimatum
+Golgari Signet
+Elvish Mystic
+Talisman of Indulgence
+Elves of Deep Shadow
+Notion Thief
+Mystic Remora
+Tatyova, Benthic Druid
+Noble Hierarch
+Putrefy
+Mortify
+Avacyn's Pilgrim
+Sun Titan
+Solemn Simulacrum
+Supreme Verdict
+Merciless Eviction
+Gruul Signet
+Ponder
+Three Visits
+Sylvan Library
+Arcane Denial
+Toxic Deluge
+Mind Stone
+Fyndhorn Elves
+Preordain
+Mana Drain
+Faeburrow Elder
+Commander's Sphere
+Selesnya Signet
+Nature's Claim
+Hullbreacher
+Avenger of Zendikar
+Nature's Lore
+Harrow
+Abrupt Decay
+Austere Command
+Fellwar Stone
+Deflecting Swat
+Phyrexian Arena
+Vandalblast
+Faithless Looting
+Return of the Wildspeaker
+Teferi's Protection
+Talisman of Progress
+Talisman of Curiosity 
+Talisman of Impulse
+Talisman of Unity
+Talisman of Resilience 
+Ancient tomb 

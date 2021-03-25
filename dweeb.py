@@ -16,7 +16,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import webcolors
 
-# TODO: this is disgusting figure out cogs
+# TODO(#1): this is disgusting figure out cogs
 
 bot = commands.Bot(command_prefix ='!')
 with open("bot.txt") as f:

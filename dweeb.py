@@ -59,7 +59,7 @@ async def ping(ctx):
 
 @bot.command()
 async def dweeb(ctx):
-    '\ttells you were the bot is'
+    '\ttells you where the bot is'
     await ctx.send('D.W.E.E.B: Da Worst Electrical Engineering Bot\n https://github.com/DrAtomic/dweeb')
 
 @bot.command()

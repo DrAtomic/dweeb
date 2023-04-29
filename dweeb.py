@@ -15,10 +15,13 @@ import os
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import webcolors
+import random
 
 # TODO(#1): this is disgusting figure out cogs
+intents = discord.Intents.default()
+intents.message_content = True
 
-bot = commands.Bot(command_prefix ='!')
+bot = commands.Bot(command_prefix='!', intents=intents)
 with open("bot.txt") as f:
     bot_cred = f.read().strip()
 
@@ -27,6 +30,15 @@ async def on_ready():
     print('logged in')
     print(bot.user.name)
     print(bot.user.id)
+
+@bot.command()
+async def l4d(ctx):
+    '\treturns a random level for left 4 dead'
+    level_list = ["Dead Center", "Dark Carnival", "Swamp Fever", "Hard Rain",
+                  "The Parish", "The Passing", "The Sacrifice", "No Mercy",
+                  "Crash Course", "Death Toll", "Dead Air", "Blood Harvest",
+                  "Cold Stream", "The Last Stand"]
+    await ctx.send(random.choice(level_list))
 
 @bot.command()
 async def  wolfy(ctx, query: str,):
@@ -131,77 +143,8 @@ async def banCheck(ctx):
             if banned_card in card:
                 banned_cards.append(card)
     await ctx.send(banned_cards)
-    
-@bot.command(pass_context=True)
-async def fabric(ctx,type_of_fabric,cost_of_fabric,length_of_fabric,password):
-    '\tadds fabric to inventory sheet'
-    with open("fabric.txt") as f:
-        fabric = f.read().strip()
 
-    if password == fabric:
-        
-        scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
-        
-        creds = ServiceAccountCredentials.from_json_keyfile_name("credfab.json",scope)
-        
-        client = gspread.authorize(creds)
-        
-        sheet = client.open("inventory").sheet1
-        
-        data = sheet.get_all_records()
-        
-        
-        attachment_url = ctx.message.attachments[0].url
-        response = requests.get(attachment_url)
-        path_to_image = response.content
-        cost_per_yard = float(cost_of_fabric) / float(length_of_fabric)
-        
-        # color classifier
-        def closest_color(requested_color):
-            min_colors = {}
-            for key, name in webcolors.CSS3_HEX_TO_NAMES.items():
-                r_c, g_c, b_c = webcolors.hex_to_rgb(key)
-                rd = (r_c - requested_color[0]) ** 2
-                gd = (g_c - requested_color[1]) ** 2
-                bd = (b_c - requested_color[2]) ** 2
-                min_colors[(rd + gd + bd)] = name
-            return min_colors[min(min_colors.keys())]
-        
-        # get image and avg
-        
-        
-        im = Image.open(BytesIO(response.content))
-        image = np.asarray(im)
-        width, height,d = image.shape
-        center_x = width/2
-        center_y = height/2
-        
-        left =round(center_x-150)
-        top =round(center_y+150)
-        right =round(center_x+150)
-        bottom =round(center_y-150)
-        croped = image[left:right,bottom:top]
-        im1 = Image.fromarray(croped)
-        
-        buffer = BytesIO()
-        im1.save(buffer, format="JPEG")
-        myimage = buffer.getvalue()
-        bytes_data = base64.b64encode(myimage)
-        
-        average = (croped.sum(axis=1).sum(axis=0)) / (croped.shape[0]*croped.shape[1])
-        
-        color_name = closest_color(average)
-        # end of color classifier
 
-        #append
-        
-        row = [color_name, type_of_fabric, str(cost_per_yard), length_of_fabric, str(bytes_data)]
-        sheet.append_row(row)
-        await ctx.send('done')
-    else:
-        await ctx.send('Access denied')
-    
-    
 @bot.command()
 async def mtg(ctx,colors):
     "takes a color combination returns a .cod file of commander lands \n also if you play hmuuuuuu"
